@@ -1,9 +1,10 @@
 import { useRecoilState } from "recoil";
 import appState from "../../../store";
 import { getBetSum } from "../../../pages/MainPage/logic";
+import { SINGLE_SELECTION_WIN, TWO_SELECTION_WINS } from "../../../constants";
 function ResultSection(props: any) {
   const [state] = useRecoilState(appState);
-  const betSum = getBetSum(state.currentBet)
+  
   return (
     <div
       className="resultSection"
@@ -20,7 +21,7 @@ function ResultSection(props: any) {
             <p className="textColor">{`${props.playerSelection
               .join()
               .toUpperCase()} WON!`}</p>
-            <p className="whiteText"> YOU WIN! ${betSum}</p>
+            <p className="whiteText"> YOU WIN! ${getBetSum(state.currentBet) * (state.playerSelection.length === 1? SINGLE_SELECTION_WIN: TWO_SELECTION_WINS)}</p>
           </div>
         )}
         {state.playStarted && !props.playerWon && (
@@ -29,7 +30,7 @@ function ResultSection(props: any) {
             <p className="textColor">{`${props.playerSelection
               .join()
               .toUpperCase()} LOST!`}</p>
-            <p className="whiteText"> YOU LOST! {betSum}</p>
+            <p className="whiteText"> YOU LOST! {getBetSum(state.currentBet)}</p>
           </div>
         )}
       </div>

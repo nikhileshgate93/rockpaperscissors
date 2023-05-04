@@ -5,6 +5,7 @@ import ButtonComponent from "../../components/ButtonComponent";
 import appState from "../../store/index";
 import { useRecoilState } from "recoil";
 import { getBetSum, onPlay } from "./logic";
+import { SINGLE_SELECTION_WIN, TWO_SELECTION_WINS } from "../../constants";
 
 function MainPage() {
   const [state, setState] = useRecoilState(appState);
@@ -22,12 +23,12 @@ function MainPage() {
     
       if (state.playerSelection.length === 1) {
         // Only one bet was done. Return 14 times the bet.
-        amountBetWon = 14 * betSum
+        amountBetWon = SINGLE_SELECTION_WIN * betSum
       }
 
       if (state.playerSelection.length === 2) {
         // Only one bet was done. Return 14 times the bet.
-        amountBetWon = 3 * betSum
+        amountBetWon = TWO_SELECTION_WINS * betSum
       }
     }
     setState({
