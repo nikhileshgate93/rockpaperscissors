@@ -15,7 +15,7 @@ function MainPage() {
     }
     
     const values = onPlay(state.playerSelection);
-    const playerWon =  !(values.result.includes(0) && values.result.includes(-1))
+    const playerWon = values.result.includes(1)
     let amountBetWon = 0
     if (playerWon) {
       const betSum = getBetSum(state.currentBet)
