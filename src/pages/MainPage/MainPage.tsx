@@ -34,7 +34,7 @@ function MainPage() {
       ...state,
       balance: state.balance + amountBetWon,
       computerSelection: values.computerSelection,
-      isTie: Math.max(...values.result) === 0,
+      isTie: !values.result.includes(1) && !values.result.includes(-1),
       playStarted: true,
       playerWon,
       playerWonCount: Math.max(...values.result) === 1 ? state.playerWonCount + 1 : state.playerWonCount
