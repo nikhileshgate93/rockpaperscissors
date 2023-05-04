@@ -1,0 +1,22 @@
+.mainPageLayout {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #303131; */
+    background-image: linear-gradient(#303131, black);
+}
+
+
+
+.playViewer {
+    height: 60vh;
+    box-sizing: border-box;
+}
+
+.buttons {
+    height: 20vh;
+    padding-top: 10vh;
+}
+
+.counter-container {
+    height: 8vh;
+}

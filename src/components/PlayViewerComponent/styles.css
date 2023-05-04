@@ -1,0 +1,14 @@
+.cardList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.resultSection {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

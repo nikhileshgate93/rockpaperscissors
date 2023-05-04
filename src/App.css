@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.textColor {
+    color: #f5ec42;
+}
+
+.whiteText {
+  color: white;
+}
+
+.Rock {
+  color: #2680EA;
+  background-color: #211F4F;
+  
+}
+
+.Paper {
+  color: #16C359;
+  background-color: #1b7c3b;
+}
+
+.Scissors {
+  color: #E31542;
+  background-color: #9a0e30;
+}
+

@@ -1,0 +1,9 @@
+.counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: black;  
+    height: 8vh;
+    color: #f5ec42;
+    align-items:center;
+}
