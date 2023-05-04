@@ -4,7 +4,7 @@ import { getBetSum } from "../../../pages/MainPage/logic";
 import { SINGLE_SELECTION_WIN, TWO_SELECTION_WINS } from "../../../constants";
 function ResultSection(props: any) {
   const [state] = useRecoilState(appState);
-  
+
   return (
     <div
       className="resultSection"
@@ -13,15 +13,22 @@ function ResultSection(props: any) {
       }}
     >
       <div>
-        <span className="whiteText"> {state.playerSelection.join(",")} </span>
+        <span className="whiteText">{" " + state.computerSelection}</span>
         <span className="textColor">VS</span>
-        <span className="whiteText">{' ' + state.computerSelection}</span>
+        <span className="whiteText"> {state.playerSelection.join(",")} </span>
         {props.playerWon && (
-          <div className=''>
+          <div className="">
             <p className="textColor">{`${props.playerSelection
               .join()
               .toUpperCase()} WON!`}</p>
-            <p className="whiteText"> YOU WIN! ${getBetSum(state.currentBet) * (state.playerSelection.length === 1? SINGLE_SELECTION_WIN: TWO_SELECTION_WINS)}</p>
+            <p className="whiteText">
+              {" "}
+              YOU WIN! $
+              {getBetSum(state.currentBet) *
+                (state.playerSelection.length === 1
+                  ? SINGLE_SELECTION_WIN
+                  : TWO_SELECTION_WINS)}
+            </p>
           </div>
         )}
         {state.playStarted && !props.playerWon && (
@@ -30,7 +37,10 @@ function ResultSection(props: any) {
             <p className="textColor">{`${props.playerSelection
               .join()
               .toUpperCase()} LOST!`}</p>
-            <p className="whiteText"> YOU LOST! {getBetSum(state.currentBet)}</p>
+            <p className="whiteText">
+              {" "}
+              YOU LOST! {getBetSum(state.currentBet)}
+            </p>
           </div>
         )}
       </div>
