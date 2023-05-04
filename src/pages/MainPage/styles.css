@@ -8,15 +8,14 @@
 
 
 .playViewer {
-    height: 60vh;
+    height: 65vh;
     box-sizing: border-box;
 }
 
 .buttons {
-    height: 20vh;
-    padding-top: 10vh;
+    height: 30vh;
 }
 
 .counter-container {
-    height: 8vh;
+    height: 5vh;
 }
