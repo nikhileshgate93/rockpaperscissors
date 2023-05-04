@@ -27,7 +27,7 @@ function MainPage() {
       }
 
       if (state.playerSelection.length === 2) {
-        // Only one bet was done. Return 14 times the bet.
+        // Only one bet was done. Return 3 times the bet.
         amountBetWon = TWO_SELECTION_WINS * betSum
       }
     }
