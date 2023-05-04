@@ -13,7 +13,8 @@ const state = atom({
             'Scissors': 0
         },
         playerWonCount: 0,
-        playStarted: false
+        playStarted: false,
+        winningSelection: ''
     }
 })
 export default state

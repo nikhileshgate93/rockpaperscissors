@@ -20,9 +20,7 @@ function ResultSection(props: any) {
         <span className="span-font whiteText"> {state.playerSelection.join(",")} </span>
         {props.playerWon && (
           <div>
-            <p className="textColor">{`${props.playerSelection
-              .join()
-              .toUpperCase()} WON!`}</p>
+            <p className="textColor">{`${state.winningSelection.toUpperCase()} WON!`}</p>
             <p className="whiteText span-font">
               YOU WIN! $
               {getBetSum(state.currentBet) *

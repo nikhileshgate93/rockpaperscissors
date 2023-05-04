@@ -38,7 +38,8 @@ function MainPage() {
       isTie: !values.result.includes(1) && !values.result.includes(-1),
       playStarted: true,
       playerWon,
-      playerWonCount: Math.max(...values.result) === 1 ? state.playerWonCount + 1 : state.playerWonCount
+      playerWonCount: Math.max(...values.result) === 1 ? state.playerWonCount + 1 : state.playerWonCount,
+      winningSelection: values.winningSelection
     });
   };
 
@@ -80,7 +81,8 @@ function MainPage() {
                   'Rock': 0,
                   'Paper': 0,
                   'Scissors': 0 
-                }
+                },
+                winningSelection: ''
               });
             }}
             title={"Clear"}

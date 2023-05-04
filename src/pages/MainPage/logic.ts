@@ -5,6 +5,7 @@ function random(values:string[]) {
 }
 
 function getResult(userSelection:string[], computerSelection:string) {
+    let winningSelection = ''
     const results = userSelection.map((selection) => {
         if (selection === computerSelection) {
             return 0
@@ -15,10 +16,12 @@ function getResult(userSelection:string[], computerSelection:string) {
         }
     
         if (selection === ROCK && computerSelection === SCISSORS) {
+            winningSelection = selection
             return 1
         }
     
         if (selection === SCISSORS && computerSelection === PAPER) {
+            winningSelection = selection
             return 1
         }
         
@@ -27,6 +30,7 @@ function getResult(userSelection:string[], computerSelection:string) {
         }
     
         if (selection === PAPER && computerSelection === ROCK) {
+            winningSelection = selection
             return 1
         }
         
@@ -36,16 +40,17 @@ function getResult(userSelection:string[], computerSelection:string) {
         return -1
     })
 
-    return results
+    return {results, winningSelection}
 }
 
 export const onPlay = (userSelection:string[]) => {
     const computerSelection = random(GAME_VALUES)
-    const result = getResult(userSelection, computerSelection)
+    const output = getResult(userSelection, computerSelection)
     return {
-        result,
+        result: output.results,
         computerSelection,
-        userSelection
+        userSelection,
+        winningSelection: output.winningSelection
     }
 }
 
